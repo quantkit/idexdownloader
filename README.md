@@ -2,7 +2,7 @@
 
 ## Overview
 
-This program downloads trade history via the IDEX API and outputs the data in CoinTracking.info CSV format.
+This program downloads IDEX trade history via API and outputs the data in CoinTracking.info CSV format.
 
 ## Instructions
 
