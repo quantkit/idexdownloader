@@ -26,4 +26,4 @@ The program will output a CSV file in CoinTracking.info format in the same direc
 
 ## Known Issues
 
-- Up to 10,000 trades per Ethereum address entered are supported.  If an Ethereum address has more trades associated with it that exceed this limit, only the first 10,000 trades returned by the IDEX API will be in the output.
+- Up to 10,000 trades per Ethereum address entered are supported.  If the trades for an Ethereum address exceed this limit, only the first 10,000 trades returned by the IDEX API for that address will appear in the output.
