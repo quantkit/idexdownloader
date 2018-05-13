@@ -14,8 +14,7 @@ sudo apt-get update
 sudo apt-get install python3-pip
 python3 -m pip install pandas --user
 ```
-
-Download the idexdownloader.py file from this repository.  Navigate to the directory that contains the file and run the following command:
+Download the idexdownloader.py file from this repository and place it in a writeable directory.  Navigate to the directory that contains the file and run the following command:
 ```
 python3 idexdownloader.py
 ```
