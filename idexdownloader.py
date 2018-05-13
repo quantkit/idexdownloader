@@ -9,14 +9,14 @@ import time
 def get_user_addresses():
   user_input = input('Copy and paste your IDEX ethereum address(es), using commas to separate multiple addresses, and press enter: ')
 
-  addresses = []
+  addresses = set()
   
   for address in user_input.split(','):
     address = address.lower().strip()
     if len(address) != 42 or address[:2] != '0x':
       print_error_message_and_exit('\n' + 'The program encountered an error while trying to read your Ethereum address(es).  Each address must be 42 characters long and begin with 0x.  If you are entering multiple addresses, use commas to separate them.  Please run the program again and reenter your address(es).')
 
-    addresses.append(address)
+    addresses.add(address)
 
   return addresses
 
@@ -90,9 +90,7 @@ def main():
   
   df = pd.DataFrame(columns=['Type (Trade, IN or OUT)', 'Buy Amount', 'Buy Cur.', 'Sell Amount', 'Sell Cur.', 'Fee Amount (optional)', 'Fee Cur. (optional)', 'Exchange (optional)', 'Trade Group (optional)', 'Comment (optional)', 'Date'])
 
-  addresses = get_user_addresses()
-  
-  for address in addresses:
+  for address in get_user_addresses():
     response = get_idex_trade_history(idex_session, address=address, start=0, end=int(time.time()))
 
     for pair in response:
