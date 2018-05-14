@@ -69,7 +69,7 @@ def add_record_to_df(df, type, left_amount, left_currency, right_amount, right_c
     sell_currency = right_currency
   
   buy_amount = buy_amount - fee_amount
-  date = str(datetime.fromtimestamp(timestamp, timezone.utc))
+  date = str(datetime.fromtimestamp(timestamp, timezone.utc).isoformat())
 
   df.loc[len(df.index)] = ['Trade', buy_amount, buy_currency, sell_amount, sell_currency, fee_amount, buy_currency, 'IDEX', np.NaN, np.NaN, date]
 
